@@ -3,16 +3,34 @@
 // arguments and returns the largest of them. Use the 
 // if-then-else construct available in JavaScript.
 // ---------------------
+function max(a,b){
+if(a < b){
+	return b
+}else{
+	return a 
+}
 
+
+}
 console.assert(max(2,3) === 3)
 console.assert(max(23,24) === 24)
 console.assert(max(-23, 12) === 12)
+
 
 // ---------------------
 // Define a function maxOfThree() that takes three 
 // numbers as arguments and returns the largest of them.
 // ---------------------
+function maxOfThree(a,b,c){
+if(a > b && a > c){
+	return a
+}else if(b > a && b > c){
+	return b
+}else {
 
+return c
+	}
+}
 console.assert(maxOfThree(2,56,3) === 56)
 console.assert(maxOfThree(12,3,4) === 12)
 console.assert(maxOfThree(-12,4,-5) === 4)
@@ -22,7 +40,15 @@ console.assert(maxOfThree(-12,4,-5) === 4)
 // string of length 1) and returns true if it is a 
 // vowel, false otherwise.
 // ---------------------
+function isVowel(str){
+	var vowels =['a','A','e','E','i','I','o','O','u','U']
+	if(vowels.indexOf(str) == -1){
+		return false
+	}else{
+		return true
+	}
 
+}
 console.assert(isVowel(0) === false);
 console.assert(isVowel("B") === false);
 console.assert(isVowel("b") === false);
@@ -38,6 +64,22 @@ console.assert(isVowel("2") === false)
 // the string "tothohisos isos fofunon".
 // ---------------------
 
+function rovarspraket(a){
+	var nextword = ""
+	if (typeof a !== "string"){
+		return a + ''
+	}
+for (let index=0; index<a.length; index++) {
+	if (isVowel(a[index])){
+		nextword+=a[index]
+	}else{
+		nextword+=a[index] + 'o' + a[index]
+	}
+	
+}
+return nextword
+}
+
 console.assert(rovarspraket("a") === "a")
 console.assert(rovarspraket("b") === "bob")
 console.assert(rovarspraket("cat") === "cocatot")
@@ -50,7 +92,14 @@ console.assert(rovarspraket(0) === "0")
 // of a string. For example, reverse("jag testar") should 
 // return the string "ratset gaj".
 // ---------------------
+ function reverse(str){
+ 	var hey = ""
 
+ 	for(index=str.length -1; index>=0; index--){
+ 		hey+=str[index]
+ 	} return hey 
+
+ }
 
 console.assert(reverse("books") === "skoob")
 console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew")
